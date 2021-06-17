@@ -15,7 +15,7 @@
         <label>Skills</label>
         <input type="text" v-model="tempSkill" @keyup="addSkill">
         <div v-for="skill in skills" :key="skill" class="pill">
-            {{ skill }}
+            <span @click="eraseSkill(skill)">{{ skill }}</span>
         </div>
 
         <div class="terms">
@@ -64,11 +64,17 @@ export default {
     methods: {
         addSkill(e) {
             if (e.key === ',' && this.tempSkill) {
-                if (!this.skills.includes(this.tempSkill)) {
-                    this.skills.push(this.tempSkill)
+                let string = this.tempSkill.substring(0, this.tempSkill.length - 1)
+                if (!this.skills.includes(string)) {
+                    this.skills.push(string)
                 }
                 this.tempSkill = ''
             }
+        },
+        eraseSkill(skill) {
+            this.skills = this.skills.filter((elm) => {
+                return skill !== elm
+            })
         }
     }
 }
@@ -111,5 +117,18 @@ export default {
         margin: 0 10px 0 0;
         position: relative;
         top: 2px;
+    }
+
+    .pill {
+        display: inline-block;
+        margin: 20px 10px 0 0;
+        padding: 6px 12px;
+        background: #eee;
+        border-radius: 20px;
+        font-size: 12px;
+        letter-spacing: 1px;
+        font-weight: bold;
+        color: #777;
+        cursor: pointer;
     }
 </style>
