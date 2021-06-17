@@ -43,10 +43,10 @@
         </div>
     </form>
 
-    <p>Email: {{email}}</p>
+    <!-- <p>Email: {{email}}</p>
     <p>Password: {{password}}</p>
     <p>Role: {{role}}</p>
-    <p>Terms: {{terms}}</p>
+    <p>Terms: {{terms}}</p> -->
     <!-- <p>Names: {{names}}</p> -->
 
 </template>
@@ -85,12 +85,10 @@ export default {
 
 <style>
     form {
-        max-width: 420px;
-        margin: 30px auto;
+        width: 420px;
         background: white;
         text-align: left;
         padding: 40px;
-        border-radius: 10px;
     }
 
     label {
@@ -136,7 +134,7 @@ export default {
     }
 
     button {
-        background: #0b6dff;
+        background: #39317a;
         border: 0;
         padding: 10px 20px;
         margin-top: 20px;

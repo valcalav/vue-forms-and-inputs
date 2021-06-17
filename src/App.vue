@@ -1,5 +1,8 @@
 <template>
-  <SignupForm />
+  <div class="signup">
+    <img src="./assets/Signup.svg" alt="logo"/>
+    <SignupForm />
+  </div>
 </template>
 
 <script>
@@ -25,6 +28,22 @@ export default {
 
 body {
   margin: 0;
-  background: #eee;
+  height: 100%;
+  background-size: cover;
+  background-repeat:no-repeat;
+  background: linear-gradient(45deg, #19134e, #abb1f3);  
+}
+
+img {
+  width: 250px;
+  margin: 0 60px;
+}
+
+.signup {
+  max-width: 900px;
+  margin: 190px auto;
+  background: white;
+  display: flex;
+  border-radius: 10px;
 }
 </style>
