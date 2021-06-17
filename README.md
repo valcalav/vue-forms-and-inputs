@@ -1,6 +1,6 @@
 # Vue-forms-and-inputs
 
-Simple signup form to learn Vue.
+Simple signup form lab to learn Vue.
 
 ![signup-form](https://user-images.githubusercontent.com/75569696/122388684-66a04b80-cf70-11eb-875e-b1ababf03271.png)
 
