@@ -2,7 +2,7 @@
 
 Simple signup form lab to learn Vue.
 
-![signup-form](https://user-images.githubusercontent.com/75569696/122388684-66a04b80-cf70-11eb-875e-b1ababf03271.png)
+![signup-vue](https://user-images.githubusercontent.com/75569696/122389511-4ae97500-cf71-11eb-8af0-91ec61e4a49c.png)
 
 ## Project setup
 ```
