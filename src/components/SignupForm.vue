@@ -1,14 +1,51 @@
 <template>
     <form>
-        <label for="">Email</label>
+        <label>Email</label>
         <input type="email" required v-model="email">
 
-        <label for="">Password</label>
+        <label>Password</label>
         <input type="password" required v-model="password">
 
+        <label>Role</label>
+        <select v-model="role">
+            <option value="developer">Web Developer</option>
+            <option value="designer">Web Designer</option>
+        </select>
+
+        <label>Skills</label>
+        <input type="text" v-model="tempSkill" @keyup="addSkill">
+        <div v-for="skill in skills" :key="skill" class="pill">
+            {{ skill }}
+        </div>
+
+        <div class="terms">
+            <input type="checkbox" required v-model="terms">
+            <label>Accept terms and conditions</label>
+        </div>
+
+        <!-- <div>
+            <input type="checkbox" value="mario" v-model="names">
+            <label>Mario</label>
+        </div>
+
+        <div>
+            <input type="checkbox" value="luigi" v-model="names">
+            <label>Luigi</label>
+        </div>
+
+        <div>
+            <input type="checkbox" value="todd" v-model="names">
+            <label>Todd</label>
+        </div> -->
+
     </form>
+
     <p>Email: {{email}}</p>
     <p>Password: {{password}}</p>
+    <p>Role: {{role}}</p>
+    <p>Terms: {{terms}}</p>
+    <!-- <p>Names: {{names}}</p> -->
+
 </template>
 
 <script>
@@ -16,7 +53,22 @@ export default {
     data() {
         return {
             email: '',
-            password: ''
+            password: '',
+            role: '',
+            terms: false,
+            // names: []
+            tempSkill: '',
+            skills: []
+        }
+    },
+    methods: {
+        addSkill(e) {
+            if (e.key === ',' && this.tempSkill) {
+                if (!this.skills.includes(this.tempSkill)) {
+                    this.skills.push(this.tempSkill)
+                }
+                this.tempSkill = ''
+            }
         }
     }
 }
@@ -42,7 +94,7 @@ export default {
         font-weight: bold;
     }
 
-    input {
+    input, select {
         display: block;
         padding: 10px 6px;
         width: 100%;
@@ -50,5 +102,14 @@ export default {
         border: none;
         border-bottom: 1px solid #ddd;
         color: #555;
+        background-color: white;
+    }
+
+    input[type="checkbox"] {
+        display: inline-block;
+        width: 16px;
+        margin: 0 10px 0 0;
+        position: relative;
+        top: 2px;
     }
 </style>
